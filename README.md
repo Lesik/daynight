@@ -33,3 +33,8 @@ If you use other CLI applications, submit a pull request to add it to
 
 It would be cool to support Qt color schemes, though I really don't know how to
 do that (and am not too excited to learn as I'm a GTK person). Help appreciated.
+
+### bugs
+
+Currently any commented lines you might have in your
+`~/.config/gtk-3.0/settings.ini` file will vanish after running `daynight`.
