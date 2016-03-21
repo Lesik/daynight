@@ -34,10 +34,10 @@ If you use other CLI applications, submit a pull request to add it to
 It would be cool to support Qt color schemes, though I really don't know how to
 do that (and am not too excited to learn as I'm a GTK person). Help appreciated.
 
-### config
+## Modules and configuration
 The configuration file can be found at `~/.config/daynight/daynight`.
 
-#### daynight-vim
+### `daynight-vim`
 `daynight` changes the `background` variable in vim. All vim sessions need to
 be restarted for this change to take effect, but that isn't a big problem as
 you probably don't use `daynight` more than twice a day.
