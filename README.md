@@ -35,6 +35,8 @@ It would be cool to support Qt color schemes, though I really don't know how to
 do that (and am not too excited to learn as I'm a GTK person). Help appreciated.
 
 ### config
+The configuration file can be found at `~/.config/daynight/daynight`.
+
 #### daynight-gtk3
 There are two ways of changing the GTK from dark to bright and back:
 - through the gtk-application-prefer-dark-theme switch
@@ -69,6 +71,33 @@ also mix these two approaches together, but keep in mind that `daynight` will
 only execute one of them, as defined by the `use-gtk-prefer-dark` key.
 
 ### bugs
-
 Currently any commented lines you might have in your
 `~/.config/gtk-3.0/settings.ini` file will vanish after running `daynight`.
+
+### hacking
+It is easy to contribute to `daynight`.
+
+The main file is `daynight.py`. It loads the config in
+`~/.config/daynight/daynight` and analyzes the `components` key. For each of
+the components, for example `my-component-1` (this could be vim, gtk3, mutt,
+etc.), it scans the corresponding (read: same name) section
+(in our example `[my-component-1]`) the config (the section necessarily has
+to exist). It then imports a python file called `daynight-my-component-1.py`,
+in which it runs a function called `daynight_my_component_1()`. The function
+receives two arguments, the first one being the state to which the theme/colors
+should be changed (boolean variable, `True` if dark) and the second one being a
+`configparser.SectionProxy` containing the "corresponding section" of the
+config file mentioned earlier. For consistency, the received arguments should
+be called `dark` and `preferences`.
+
+A less abstract example: To add mate-terminal support to `daynight`, you'd have
+to create a file called `daynight-mate-terminal.py` containing the function
+`daynight_mate_terminal(dark, preferences)`, which is then responsible for
+doing everything that is needed to change the theme/colors.
+
+Please use tabs for indentation. I know that PEP says otherwise, but I believe
+that it's part of a programmer's freedom to have a custom indent width, which
+is not possible when using a fixed space indent. I personally have my tabs set
+to 4 space characters.
+
+`ClassNamesInCamelCase, function_names_with_underscores(), same_for_variables`
