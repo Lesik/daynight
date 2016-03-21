@@ -13,11 +13,7 @@ PREF_LIST_SEPARATOR = ",";
 MODULE_SEPARATOR = "-";
 FUNCTION_SEPARATOR = "_";
 
-PREF_KEY_GENERAL =			"General";
 PREF_KEY_COMPONENTS =		"components";
-PREF_KEY_THEME_LIGHT =		"theme-light";
-PREF_KEY_THEME_DARK =		"theme-dark";
-PREF_KEY_GTK_PREFER_DARK =	"use-gtk-prefer-dark";
 
 COMPONENT_GTK = "gtk";
 COMPONENT_VIM = "vim";
@@ -32,8 +28,8 @@ config = ConfigParser();
 if not config.read(join(daynight_config_path, DAYNIGHT_CONFIG_FILE)):
 	raise FileNotFoundError("Config file missing");
 
-pref_general = config[PREF_KEY_GENERAL];
-components = pref_general[PREF_KEY_COMPONENTS].split(PREF_LIST_SEPARATOR);
+pref_daynight = config[DAYNIGHT];
+components = pref_daynight[PREF_KEY_COMPONENTS].split(PREF_LIST_SEPARATOR);
 
 if len(components) != len(set(components)):
 	warn("Possible duplicates in config, you probably don't want this.");
@@ -51,7 +47,7 @@ for component in components:
 						# as "xfce4-terminal" and not change it to something
 						# like "xfce4term" to avoid confusion
 		function = getattr(module, function_name);
-		function(pref_component);
+		function(True, pref_component);
 	except KeyError as e:
 		print("An exception occured while parsing", component);
 		raise e;
