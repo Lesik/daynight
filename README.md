@@ -39,8 +39,10 @@ do that (and am not too excited to learn as I'm a GTK person). Help appreciated.
 There are two ways of changing the GTK from dark to bright and back:
 - through the gtk-application-prefer-dark-theme switch
 - through completely changing GTK themes
+
 The first approach is better and should be used everywhere, but not all themes
 support it yet. A good theme that supports the first way is Numix-Solarized.
+
 `daynight` supports both ways. Here is an example config for the first way:
 ```
 [daynight]
