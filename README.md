@@ -81,7 +81,7 @@ The main file is `daynight.py`. It loads the config in
 `~/.config/daynight/daynight` and analyzes the `components` key. For each of
 the components, for example `my-component-1` (this could be vim, gtk3, mutt,
 etc.), it scans the corresponding (read: same name) section
-(in our example `[my-component-1]`) the config (the section necessarily has
+(in our example `[my-component-1]`) in the config (the section necessarily has
 to exist). It then imports a python file called `daynight-my-component-1.py`,
 in which it runs a function called `daynight_my_component_1()`. The function
 receives two arguments, the first one being the state to which the theme/colors
