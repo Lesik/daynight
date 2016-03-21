@@ -101,3 +101,7 @@ is not possible when using a fixed space indent. I personally have my tabs set
 to 4 space characters.
 
 `ClassNamesInCamelCase, function_names_with_underscores(), same_for_variables`
+
+For consistency, please end code lines with a semicolon (`;`), even though this
+is not necessary in Python. No lines are allowed to exceed 79 characters
+(from a tab-is-4-spaces perspective).
