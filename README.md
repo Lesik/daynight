@@ -37,6 +37,24 @@ do that (and am not too excited to learn as I'm a GTK person). Help appreciated.
 ### config
 The configuration file can be found at `~/.config/daynight/daynight`.
 
+#### daynight-vim
+`daynight` changes the `background` variable in vim. All vim sessions need to
+be restarted for this change to take effect, but that isn't a big problem as
+you probably don't use `daynight` more than twice a day.
+
+I was thinking about also allowing changing the vim colorscheme, but then
+discarded that thought. Please set the `use-background` config to true.
+
+Here is an example configuration for `daynight-vim` which will set the
+`background` variable of vim to dark or light:
+```
+[daynight]
+components = vim
+
+[vim]
+use-background = 1
+```
+
 #### daynight-gtk3
 There are two ways of changing the GTK from dark to bright and back:
 - through the gtk-application-prefer-dark-theme switch

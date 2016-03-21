@@ -47,7 +47,7 @@ for component in components:
 						# as "xfce4-terminal" and not change it to something
 						# like "xfce4term" to avoid confusion
 		function = getattr(module, function_name);
-		function(True, pref_component);
+		function(False, pref_component);
 	except KeyError as e:
 		print("An exception occured while parsing", component);
 		raise e;
