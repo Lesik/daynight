@@ -38,6 +38,9 @@ do that (and am not too excited to learn as I'm a GTK person). Help appreciated.
 The configuration file can be found at `~/.config/daynight/daynight`.
 
 ### `daynight-vim`
+```
+Note: vim needs to be restarted after running daynight
+```
 `daynight` changes the `background` variable in vim. All vim sessions need to
 be restarted for this change to take effect, but that isn't a big problem as
 you probably don't use `daynight` more than twice a day.
@@ -55,7 +58,7 @@ components = vim
 use-background = 1
 ```
 
-#### daynight-gtk3
+### `daynight-gtk3`
 There are two ways of changing the GTK from dark to bright and back:
 - through the gtk-application-prefer-dark-theme switch
 - through completely changing GTK themes
@@ -88,11 +91,11 @@ As you can see, the `use-gtk-prefer-dark` key is mandatory. You can probably
 also mix these two approaches together, but keep in mind that `daynight` will
 only execute one of them, as defined by the `use-gtk-prefer-dark` key.
 
-### bugs
+## bugs
 Currently any commented lines you might have in your
 `~/.config/gtk-3.0/settings.ini` file will vanish after running `daynight`.
 
-### hacking
+## hacking
 It is easy to contribute to `daynight`.
 
 The main file is `daynight.py`. It loads the config in
