@@ -105,3 +105,6 @@ to 4 space characters.
 For consistency, please end code lines with a semicolon (`;`), even though this
 is not necessary in Python. No lines are allowed to exceed 79 characters
 (from a tab-is-4-spaces perspective).
+
+To warn the user, use the `warn()` function from `debug.py`, supplying the
+warning message as argument. Similarly, use `err()` for errors.
